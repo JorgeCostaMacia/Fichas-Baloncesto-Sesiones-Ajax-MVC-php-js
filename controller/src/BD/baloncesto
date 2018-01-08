@@ -1,0 +1,28 @@
+create table jugadores(
+	id SMALLINT NOT NULL AUTO_INCREMENT,
+	nombre CHAR(30) NOT NULL,
+	posicion CHAR(30) DEFAULT 'base',
+	partidos	SMALLINT default 0,
+	puntos DECIMAL(10,1) default 0,
+	rebotes DECIMAL(10,1) default 0,
+	asistencias DECIMAL(10,1) default 0,
+   CONSTRAINT PK_JUGADORES PRIMARY KEY (id)
+)ENGINE=InnoDB;
+
+CREATE TABLE usuarios (
+    loginUsser CHAR(30) NOT NULL,
+    passUsser CHAR(30) DEFAULT 'defaultpass',
+    CONSTRAINT PK_USUARIO PRIMARY KEY (loginUsser)
+)ENGINE=InnoDB;
+
+insert into jugadores (nombre, posicion, partidos, puntos, rebotes, asistencias) VALUES ('Valero', 'base', 24, 5.2, 1.7, 9.8);
+insert into jugadores (nombre, posicion, partidos, puntos, rebotes, asistencias) VALUES ('Juanfran', 'base', 29, 6.1, 0.8, 5.8);
+insert into jugadores (nombre, posicion, partidos, puntos, rebotes, asistencias) VALUES ('Montilla', 'escolta', 19, 11.7, 2.7, 2.4);
+insert into jugadores (nombre, posicion, partidos, puntos, rebotes, asistencias) VALUES ('Rodriguez', 'escolta', 23, 17.1, 1.8, 3.7);
+insert into jugadores (nombre, posicion, partidos, puntos, rebotes, asistencias) VALUES ('Stipes', 'escolta', 31, 8.5, 3.1, 0.9);
+insert into jugadores (nombre, posicion, partidos, puntos, rebotes, asistencias) VALUES ('Montes', 'alero', 32, 13.1, 4.6, 4.1);
+insert into jugadores (nombre, posicion, partidos, puntos, rebotes, asistencias) VALUES ('Volkov', 'ala pivot', 11, 4.3, 5.6, 1.3);
+insert into jugadores (nombre, posicion, partidos, puntos, rebotes, asistencias) VALUES ('Suarez', 'ala pivot', 24, 6.9, 4.8, 4.5);
+insert into jugadores (nombre, posicion, partidos, puntos, rebotes, asistencias) VALUES ('Carter', 'ala pivot',26, 26.1, 9.1, 1.8);
+insert into jugadores (nombre, posicion, partidos, puntos, rebotes, asistencias) VALUES ('Graham', 'pivot', 17, 2.1, 8.4, 0.2);
+insert into jugadores (nombre, posicion, partidos, puntos, rebotes, asistencias) VALUES ('Cesar', 'pivot', 8, 3.1, 6.8, 0.7);

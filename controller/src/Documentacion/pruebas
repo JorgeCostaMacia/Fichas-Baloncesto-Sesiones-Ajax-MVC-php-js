@@ -1,0 +1,32 @@
+
+
+foreach ($jugadores as $jugador){
+    echo '<tr id="' . $jugador->getId(). '">';
+    echo '<td>' . $jugador->getId() . '</td>';
+
+    echo '<td><input type="text" id="nombre' . $jugador->getId() . '" class="form-control" value="' . $jugador->getNombre() .  '"></td>';
+
+    echo '<td><select id="posicion' . $jugador->getId() . '" class="form-control">';
+        if($jugador->getPosicion() == "ala pivot"){ echo '<option value="ala pivot" selected>Ala pivot</option>'; }
+        else { echo '<option value="ala pivot">Ala pivot</option>'; }
+        if($jugador->getPosicion() == "alero"){ echo '<option value="alero" selected>Alero</option>'; }
+        else { echo '<option value="alero">Alero</option>'; }
+        if($jugador->getPosicion() == "base"){ echo '<option value="base" selected>Base</option>'; }
+        else { echo '<option value="base">Base</option>'; }
+        if($jugador->getPosicion() == "escolta"){ echo '<option value="escolta" selected>Escolta</option>'; }
+        else { echo '<option value="escolta">Escolta</option>'; }
+        if($jugador->getPosicion() == "pivot"){ echo '<option value="pivot" selected>Pivot</option>'; }
+        else { echo '<option value="pivot">Pivot</option>'; }
+    echo '</select></td>';
+
+    echo '<td><input type="number" id="partidos' . $jugador->getId() . '" class="form-control" value="' . $jugador->getPartidos() .  '" min="0"></td>';
+    echo '<td><input type="number" id="puntos' . $jugador->getId() . '" class="form-control" value="' . round($jugador->getPuntos()) .  '" min="0"></td>';
+    echo '<td><input type="number" id="rebotes' . $jugador->getId() . '" class="form-control" value="' . round($jugador->getRebotes()) .  '" min="0"></td>';
+    echo '<td><input type="number" id="asistencias' . $jugador->getId() . '" class="form-control" value="' . round($jugador->getAsistencias()) .  '" min="0"></td>';
+
+    echo '<form id="formJugadores" class="navbar-form" action="index.php?page=jugadores" method="POST">
+            <td><button type="submit" name="modificarJugador" value="' . $jugador->getId(). '" class="btn btn-warning btn-block">Modificar</button></td>
+            <td><button type="button" name="borrarJugador" value="' . $jugador->getId(). '" class="btn btn-danger btn-block">Borrar</button></td>
+        </form>';
+    echo '</tr>';
+}
